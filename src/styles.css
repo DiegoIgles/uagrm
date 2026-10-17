@@ -26,14 +26,22 @@ body {
 .home h1 {
   text-align: center;
   color: var(--uagrm-red-2);
+  font-size: 1.6rem;
+  font-weight: 700;
 }
 .home h2 {
   text-align: center;
   color: var(--uagrm-blue);
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 .home h3,
 .home h4 {
   text-align: center;
+  font-size: 1rem;
+}
+.home h4 {
+  font-size: 0.9rem;
 }
 /* Links keep Bootstrap's default blue (#007bff), like the original. */
 
