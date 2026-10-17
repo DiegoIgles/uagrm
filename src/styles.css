@@ -1,0 +1,862 @@
+:root {
+  --uagrm-red: #a30d0a;
+  --uagrm-red-2: #C02428;
+  --uagrm-blue: #006699;
+  --uagrm-purple: #551A8B;
+}
+
+body {
+  margin: 0;
+  background-color: #fff;
+  color: #212529;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+.brand-logo {
+  min-width: 200px;
+  max-width: 500px;
+  padding: 0 15px;
+}
+.brand-logo img {
+  width: 100%;
+}
+
+/* Home titles, matching the original palette */
+.home h1 {
+  text-align: center;
+  color: var(--uagrm-red-2);
+}
+.home h2 {
+  text-align: center;
+  color: var(--uagrm-blue);
+}
+.home h3,
+.home h4 {
+  text-align: center;
+}
+/* Links keep Bootstrap's default blue (#007bff), like the original. */
+
+/* Account type thumbnails — faithful to the original ul.thumb + Zoomer hover.
+   Square images on a light-gray tile, with a zoom + blue title label on hover. */
+.account-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.75rem;
+  padding: 2rem 0 3.5rem;
+  list-style: none;
+  margin: 0;
+}
+.account-grid li {
+  position: relative;
+}
+.account-card {
+  display: block;
+  position: relative;
+  text-decoration: none;
+}
+.account-thumb {
+  display: block;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  padding: 5px;
+  transition: transform 0.4s ease, border-color 0.4s ease;
+}
+/* Zoom + title only on real-hover devices, so a tap on a touch screen does
+   not leave an icon enlarged and overlapping the links below it. */
+@media (hover: hover) and (pointer: fine) {
+  .account-card:hover .account-thumb {
+    transform: scale(1.35);
+    border-color: var(--uagrm-blue);
+  }
+  .account-card:hover .account-title {
+    opacity: 1;
+  }
+}
+/* Hover title overlay (mimics the original white-on-blue .title badge). */
+.account-title {
+  position: absolute;
+  left: 50%;
+  bottom: -30px;
+  transform: translateX(-50%);
+  padding: 6px 12px;
+  background: var(--uagrm-blue);
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  white-space: nowrap;
+  border-radius: 3px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+/* Mobile: left-aligned 2-column grid of icons, like the reference. */
+@media (max-width: 600px) {
+  .account-grid {
+    justify-content: flex-start;
+    gap: 1.25rem;
+    padding: 1.5rem 1rem 2rem;
+  }
+}
+
+/* Fallback glyph when an image fails to load. */
+.account-thumb--fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.6rem;
+  color: #212529;
+}
+
+.text-brand {
+  color: var(--uagrm-red);
+}
+
+/* ============================================================
+   Estudiante dashboard ("Datos Personales") — replica of the
+   real post-login view (navy header + sidebar menu + field grid).
+   ============================================================ */
+:root {
+  --dash-navy: #16387a;        /* labels, text */
+  --dash-header: #1c4a9e;      /* top banner */
+  --dash-sidebar-1: #0e2a63;
+  --dash-sidebar-2: #1c4290;
+  --dash-menu-blue: #cdd9ef;
+  --dash-menu-cream: #f4e6a8;
+}
+
+.ep {
+  min-height: 100vh;
+  background: #fff;
+  color: #212529;
+}
+
+/* Top banner */
+.ep-header {
+  height: 84px;
+  background: var(--dash-header);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 2.5rem;
+}
+.ep-header-thumbs {
+  display: flex;
+  gap: 5rem;
+}
+.ep-header-thumb {
+  width: 72px;
+  height: 48px;
+  border: 1px solid #0c1f4a;
+  border-radius: 2px;
+  background: linear-gradient(135deg, #3a5aa0, #26407e 60%, #88407a);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+  object-fit: cover;        /* applies when it's an <img> */
+  display: inline-block;
+}
+
+.ep-body {
+  display: flex;
+  align-items: stretch;
+}
+
+/* Sidebar */
+.ep-sidebar {
+  width: 182px;
+  flex: 0 0 182px;
+  background: linear-gradient(90deg, var(--dash-sidebar-1), var(--dash-sidebar-2) 50%, var(--dash-sidebar-1));
+  padding: 0 0 2rem;
+  min-height: calc(100vh - 84px);
+}
+.ep-sidebar-title {
+  color: #e8eefb;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.3;
+  padding: 1.1rem 0;
+}
+.ep-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0 10px;
+}
+.ep-menu-item {
+  display: block;
+  margin-bottom: 4px;
+  padding: 7px 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--dash-navy);
+  cursor: pointer;
+  border-radius: 2px;
+  line-height: 1.25;
+  user-select: none;
+}
+.ep-menu-blue {
+  background: var(--dash-menu-blue);
+}
+.ep-menu-blue:hover {
+  background: #dce5f6;
+}
+.ep-menu-cream {
+  background: var(--dash-menu-cream);
+}
+.ep-menu-cream:hover {
+  background: #f9eec2;
+}
+.ep-menu-active {
+  box-shadow: inset 3px 0 0 var(--dash-navy);
+}
+.ep-menu-gap {
+  margin-top: 1.4rem;
+}
+
+/* Main content */
+.ep-main {
+  flex: 1;
+  padding: 1.6rem 2.5rem 3rem;
+  min-width: 0;
+}
+.ep-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--dash-navy);
+  font-weight: 700;
+  font-size: 1.7rem;
+  letter-spacing: 0.5px;
+  margin: 0 0 1.8rem;
+}
+.ep-title-icon {
+  width: 24px;
+  height: 24px;
+  fill: var(--dash-navy);
+}
+
+.ep-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+.ep-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.3rem;
+}
+.ep-field {
+  min-width: 140px;
+}
+.ep-label {
+  display: block;
+  color: var(--dash-navy);
+  font-weight: 700;
+  font-size: 0.82rem;
+  margin-bottom: 0.35rem;
+}
+.ep-input {
+  width: 100%;
+  background: #eeeeee;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 0.5rem 0.7rem;
+  font-size: 0.9rem;
+  color: #333;
+  cursor: default;
+}
+.ep-input:focus {
+  outline: none;
+}
+
+.ep-photo-block {
+  margin-top: 1.8rem;
+}
+.ep-photo {
+  width: 180px;
+  height: 200px;
+  margin-top: 0.35rem;
+  background: #d9d9d9;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ep-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 3px;
+}
+.ep-photo-ph {
+  width: 90px;
+  height: 90px;
+  fill: #9a9a9a;
+}
+
+/* Mobile toggle button — hidden on desktop, shown on small screens. */
+.ep-menu-toggle {
+  display: none;
+  position: absolute;
+  top: 56px;
+  left: 0;
+  z-index: 20;
+  background: #1c3f87;
+  color: #fff;
+  border: 1px solid #0c1f4a;
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  .ep {
+    position: relative;
+  }
+  .ep-menu-toggle {
+    display: inline-block;
+  }
+  /* Spread the three banner photos across the top. */
+  .ep-header {
+    padding: 0 0.4rem;
+    justify-content: space-between;
+  }
+  .ep-header-thumbs {
+    width: 100%;
+    gap: 0.4rem;
+    justify-content: space-between;
+  }
+  .ep-header-thumb {
+    width: 31%;
+    height: 56px;
+  }
+  /* Sidebar collapses by default; the toggle reveals it (row layout kept). */
+  .ep-sidebar {
+    display: none;
+    width: 160px;
+    flex-basis: 160px;
+  }
+  .ep.menu-open .ep-sidebar {
+    display: block;
+  }
+  .ep-main {
+    padding: 1.2rem 1rem 2.5rem;
+  }
+}
+
+/* ============================================================
+   Histórico (academic history table)
+   ============================================================ */
+.eh-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.eh-title {
+  color: var(--dash-navy);
+  font-weight: 700;
+  font-size: 1.7rem;
+  margin: 0 0 0.5rem;
+}
+.eh-print {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #17a2b8;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.eh-print:hover {
+  background: #138496;
+}
+.eh-print-icon {
+  width: 18px;
+  height: 18px;
+  fill: #fff;
+}
+
+.eh-sub {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0.75rem 0 1.25rem;
+}
+.eh-student-label {
+  color: var(--dash-navy);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+.eh-student-reg {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #333;
+  line-height: 1.1;
+}
+.eh-student-name {
+  color: #555;
+  font-size: 0.95rem;
+}
+.eh-ppac-block {
+  text-align: right;
+}
+.eh-ppac {
+  color: #2f78c4;
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+.eh-career {
+  color: #2f78c4;
+  font-size: 0.9rem;
+}
+
+.eh-table-wrap {
+  overflow-x: auto;
+}
+/* Shrink-to-fit around the widest child (the table), but never below the
+   viewport, so the header and table share one width and scroll together. */
+.eh-scroll {
+  display: inline-block;
+  min-width: 100%;
+  vertical-align: top;
+}
+.eh-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+.eh-table thead th {
+  background: #e9ecef;
+  color: #6c757d;
+  font-weight: 600;
+  text-align: left;
+  padding: 12px 14px;
+  font-size: 0.8rem;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+.eh-table tbody td {
+  padding: 14px 14px;
+  color: #333;
+  border-bottom: 1px solid #f0f0f0;
+}
+.eh-table tbody tr:nth-child(even) td {
+  background: #f7f7f7;
+}
+.eh-c-materia {
+  color: var(--dash-navy);
+  min-width: 260px;
+}
+.eh-c-nivel,
+.eh-c-cr {
+  text-align: left;
+  white-space: nowrap;
+}
+.eh-c-nota,
+th.eh-c-nota {
+  text-align: right;
+}
+
+/* Colored grade cell — fills the whole cell like the original.
+   Selector kept specific so the white text beats `.eh-table tbody td`. */
+.eh-table tbody td.eh-nota {
+  padding: 0;
+  width: 92px;
+  min-width: 92px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #fff;
+  border-bottom: none;
+}
+td.eh-nota.eh-nota--ok {
+  background: #2e9e3f;
+}
+td.eh-nota.eh-nota--bad {
+  background: #d9363e;
+}
+/* Keep the alternating-row tint from overriding the grade color. */
+.eh-table tbody tr:nth-child(even) td.eh-nota--ok {
+  background: #2e9e3f;
+}
+.eh-table tbody tr:nth-child(even) td.eh-nota--bad {
+  background: #d9363e;
+}
+
+@media print {
+  .ep-header,
+  .ep-sidebar,
+  .ep-menu-toggle,
+  .eh-print {
+    display: none !important;
+  }
+  .ep-main {
+    padding: 0;
+  }
+}
+
+/* ============================================================
+   Certificados
+   ============================================================ */
+.ec-intro {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 1100px;
+  margin: 0 0 1.75rem;
+}
+.ec-link {
+  color: #007bff;
+}
+
+.ec-panel {
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  margin-bottom: 1.75rem;
+  background: #fff;
+}
+.ec-panel-head {
+  background: #f5f5f5;
+  border-bottom: 1px solid #e3e3e3;
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+  color: #333;
+}
+.ec-panel-body {
+  padding: 1.25rem;
+}
+
+/* Issued-certificates table */
+.ec-table-wrap {
+  overflow-x: auto;
+}
+.ec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.ec-table thead th {
+  text-align: left;
+  color: #333;
+  font-weight: 700;
+  padding: 10px 14px;
+  border-bottom: 1px solid #e0e0e0;
+  white-space: nowrap;
+}
+.ec-table tbody td {
+  padding: 12px 14px;
+  color: #444;
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: middle;
+}
+.ec-table tbody tr:last-child td {
+  border-bottom: none;
+}
+.ec-strong {
+  font-weight: 700;
+  color: #333;
+}
+.ec-desc {
+  color: var(--dash-navy);
+  min-width: 260px;
+}
+.ec-c-right {
+  text-align: right;
+}
+
+/* Badges */
+.ec-badge {
+  display: inline-block;
+  padding: 4px 11px;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+.ec-badge--gratuito {
+  background: #f1c40f;
+  color: #5a4a00;
+}
+.ec-badge--expirado {
+  background: #6c757d;
+  color: #fff;
+}
+.ec-badge--vigencia {
+  background: #2bb0d9;
+  color: #fff;
+}
+
+/* Download button (active certificate) */
+.ec-download {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  line-height: 0;
+}
+.ec-download svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: #5a6b7b;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.ec-download:hover svg {
+  stroke: var(--dash-navy);
+}
+
+/* Issuable-certificate cards */
+.ec-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  padding: 1.1rem 1.35rem;
+  margin-bottom: 1rem;
+}
+.ec-card:last-child {
+  margin-bottom: 0;
+}
+.ec-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2b2b2b;
+  margin: 0 0 0.25rem;
+}
+.ec-card-sub {
+  font-style: italic;
+  color: #666;
+  font-size: 0.82rem;
+  margin-bottom: 0.65rem;
+}
+.ec-card-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.ec-emitir {
+  flex: 0 0 auto;
+  background: #fff;
+  border: 1px solid #bcbcbc;
+  border-radius: 5px;
+  padding: 8px 22px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+}
+.ec-emitir:hover {
+  background: #f0f0f0;
+}
+
+@media (max-width: 600px) {
+  .ec-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .ec-emitir {
+    align-self: stretch;
+  }
+}
+
+/* ============================================================
+   Avance Académico (reuses eh-* header; own table ea-*)
+   ============================================================ */
+.ea-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.ea-table thead th {
+  background: #e9ecef;
+  color: #6c757d;
+  font-weight: 600;
+  text-align: left;
+  padding: 12px 14px;
+  font-size: 0.8rem;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+.ea-table thead th.ea-c-nota {
+  text-align: right;
+}
+.ea-table tbody td {
+  padding: 16px 14px;
+  color: #333;
+  border-bottom: 1px solid #f0f0f0;
+}
+.ea-table tbody tr:nth-child(even) td {
+  background: #f7f7f7;
+}
+.ea-c-materia {
+  color: var(--dash-navy);
+  min-width: 300px;
+}
+.ea-c-nivel {
+  white-space: nowrap;
+}
+/* NOTA column: uniform light-gray band, dark right-aligned number. */
+.ea-table tbody td.ea-nota {
+  text-align: right;
+  min-width: 110px;
+  background: #ececec;
+  color: #333;
+  font-weight: 400;
+}
+.ea-table tbody tr:nth-child(even) td.ea-nota {
+  background: #ececec;
+}
+
+.ea-aviso {
+  border-left: 4px solid var(--dash-navy);
+  padding: 0.15rem 0 0.15rem 0.9rem;
+  margin-top: 1.5rem;
+}
+.ea-aviso-label {
+  color: var(--dash-navy);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.ea-aviso-text {
+  color: #333;
+  font-size: 1.05rem;
+}
+
+/* ============================================================
+   Boleta de Inscripción
+   ============================================================ */
+.eb-banner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+.eb-bigtitle {
+  color: var(--dash-navy);
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+.eb-id {
+  text-align: right;
+}
+.eb-reg {
+  color: #2f78c4;
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+.eb-name {
+  color: #444;
+  font-size: 0.95rem;
+}
+.eb-ci {
+  color: #666;
+  font-size: 0.85rem;
+}
+.eb-rule {
+  border: none;
+  border-top: 2px solid var(--dash-navy);
+  margin: 0.6rem 0 1.1rem;
+}
+.eb-carrera-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+.eb-carrera {
+  color: var(--dash-navy);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+.eb-meta {
+  color: var(--dash-navy);
+  font-size: 0.82rem;
+  letter-spacing: 0.3px;
+}
+.eb-origen {
+  color: #2f78c4;
+  font-size: 2rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.eb-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.eb-table thead th {
+  background: #e9ecef;
+  color: #6c757d;
+  font-weight: 600;
+  text-align: left;
+  padding: 12px 14px;
+  font-size: 0.8rem;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+.eb-table tbody td {
+  padding: 16px 14px;
+  color: #333;
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: middle;
+}
+.eb-table tbody tr:nth-child(even) td {
+  background: #f7f7f7;
+}
+.eb-c-materia {
+  color: var(--dash-navy);
+  min-width: 240px;
+}
+.eb-sigla {
+  color: var(--dash-navy);
+  font-weight: 600;
+}
+/* HORARIO column: uniform light-gray band like the original. */
+.eb-c-horario {
+  min-width: 320px;
+}
+.eb-table tbody td.eb-horario {
+  background: #ececec;
+  color: #333;
+  min-width: 320px;
+  white-space: nowrap;
+}
+.eb-table tbody tr:nth-child(even) td.eb-horario {
+  background: #ececec;
+}
+
+@media (max-width: 600px) {
+  /* Keep the banner and career line as rows so the registro / ORIGEN stay
+     on the right — inside the scroll container they require scrolling right. */
+  .eb-bigtitle {
+    font-size: 2rem;
+  }
+}
