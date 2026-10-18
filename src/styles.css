@@ -993,3 +993,30 @@ td.eh-nota.eh-nota--bad {
 .ea .eh-student-reg {
   font-weight: 500;
 }
+
+/* Histórico: white borders between table rows. */
+.eh-historico .eh-table tbody td {
+  border-bottom-color: #fff;
+}
+
+/* Histórico: white separation lines on every cell (rows and columns). */
+.eh-historico .eh-table th,
+.eh-historico .eh-table td {
+  border: 1px solid #fff;
+}
+
+/* Avance Académico: white separation lines on every cell (rows and columns). */
+.ea .ea-table th,
+.ea .ea-table td {
+  border: 1px solid #fff;
+}
+
+/* Datos Personales: title with a soft (medium) weight. */
+.dp .ep-title {
+  font-weight: 500;
+}
+
+/* Certificados: title with a soft (medium) weight. */
+.ec .ep-title {
+  font-weight: 500;
+}
