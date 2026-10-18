@@ -13,7 +13,7 @@ function Field({ label, value, grow = 1 }) {
 export default function DatosPersonales() {
   const p = studentProfile
   return (
-    <>
+    <div className="dp">
       <h1 className="ep-title">
         <svg className="ep-title-icon" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M6 2h12a1 1 0 0 1 1 1v18l-7-4-7 4V3a1 1 0 0 1 1-1z" />
@@ -67,6 +67,6 @@ export default function DatosPersonales() {
           />
         </div>
       </div>
-    </>
+    </div>
   )
 }

@@ -315,11 +315,10 @@ body {
   top: 56px;
   left: 0;
   z-index: 20;
-  background: #1c3f87;
-  color: #fff;
-  border: 1px solid #0c1f4a;
-  border-left: none;
-  border-radius: 0 4px 4px 0;
+  background: #e4e6e8;
+  color: #333;
+  border: 1px solid #222;
+  border-radius: 4px;
   padding: 6px 12px;
   font-size: 0.8rem;
   font-weight: 600;
@@ -867,4 +866,131 @@ td.eh-nota.eh-nota--bad {
   .eb-bigtitle {
     font-size: 2rem;
   }
+}
+
+/* Histórico: "INS" (inscrito / sin nota) renders as a neutral gray cell. */
+.eh-table tbody td.eh-nota.eh-nota--ins {
+  background: #ececec;
+  color: #555;
+}
+.eh-table tbody tr:nth-child(even) td.eh-nota--ins {
+  background: #ececec;
+}
+
+/* Histórico: PPA explanation note. */
+.eh-ppa-note {
+  border-left: 4px solid var(--dash-navy);
+  padding: 0.2rem 0 0.2rem 0.9rem;
+  margin-top: 1.5rem;
+}
+.eh-ppa-formula {
+  color: var(--dash-navy);
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+.eh-ppa-item {
+  color: #333;
+  font-size: 0.9rem;
+}
+
+/* Datos Personales: title and field labels in black (not navy). */
+.dp .ep-title {
+  color: #000;
+}
+.dp .ep-title-icon {
+  fill: #000;
+}
+.dp .ep-label {
+  color: #000;
+}
+
+/* Certificados: title in black (not navy). */
+.ec .ep-title {
+  color: #000;
+}
+.ec .ep-title-icon {
+  fill: #000;
+}
+
+/* Histórico: title and "ESTUDIANTE :" label in black (not navy). */
+.eh-historico .eh-title {
+  color: #000;
+}
+.eh-historico .eh-student-label {
+  color: #000;
+}
+
+/* Boleta de Inscripción: title and career/modality/locality text in black. */
+.eb .eh-title,
+.eb-bigtitle,
+.eb-carrera,
+.eb-meta {
+  color: #000;
+}
+
+/* Histórico: title without bold. */
+.eh-historico .eh-title {
+  font-weight: 400;
+}
+
+/* Histórico: nota numbers without bold. */
+.eh-historico .eh-table tbody td.eh-nota {
+  font-weight: 400;
+}
+
+/* Histórico: "ESTUDIANTE :" label and registro without bold. */
+.eh-historico .eh-student-label,
+.eh-historico .eh-student-reg {
+  font-weight: 400;
+}
+
+/* Histórico: registro with a soft (medium) weight. */
+.eh-historico .eh-student-reg {
+  font-weight: 500;
+}
+
+/* Histórico: P.P.A.C. a bit larger and with a soft (medium) weight. */
+.eh-historico .eh-ppac {
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+
+/* Boleta: both "Boleta de Inscripción" titles with a softer weight. */
+.eb .eh-title,
+.eb-bigtitle {
+  font-weight: 500;
+}
+
+/* Boleta: career line with a softer weight. */
+.eb-carrera {
+  font-weight: 500;
+}
+
+/* Boleta: registro a bit larger and with a soft (medium) weight. */
+.eb-reg {
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+
+/* Avance Académico: title in black with a soft (medium) weight. */
+.ea .eh-title {
+  color: #000;
+  font-weight: 500;
+}
+
+/* Avance Académico: "ESTUDIANTE :" label in black. */
+.ea .eh-student-label {
+  color: #000;
+}
+
+/* Avance Académico: P.P.A.C. a bit larger with a soft (medium) weight. */
+.ea .eh-ppac {
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+
+/* Avance Académico: registro with a soft (medium) weight. */
+.ea .eh-student-reg {
+  font-weight: 500;
 }

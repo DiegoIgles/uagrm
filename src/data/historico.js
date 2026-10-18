@@ -2,15 +2,16 @@
 export const historicoInfo = {
   registro: '222044810',
   nombre: 'ROJAS PAZ ELENA',
-  ppac: '50.00',
+  ppac: '53.00',
   carreraCodigo: '187-6',
   carreraNombre: 'INGENIERÍA INFORMÁTICA'
 }
 
 // Grade threshold: >= 51 is a pass (green), below is a fail (red).
+// A non-numeric nota (e.g. 'INS' = inscrito) renders as a neutral gray cell.
 export const NOTA_APROBACION = 51
 
-// Academic history rows, in the same order as the reference screenshot.
+// Academic history rows, in the same order as the reference screenshots.
 export const historicoRows = [
   { nivel: 1, carrera: '242 - 7', materia: 'TEX140 - COMPRENSION Y PRODUCC. TEXTUAL', cr: 8, periodo: '1-2022', nota: 73 },
   { nivel: 6, carrera: '242 - 7', materia: 'FRA120 - FRANCES I (1)', cr: 8, periodo: '1-2022', nota: 30 },
@@ -26,15 +27,25 @@ export const historicoRows = [
   { nivel: 2, carrera: '242 - 7', materia: 'ING210 - INGLES II', cr: 8, periodo: '1-2024', nota: 71 },
   { nivel: 2, carrera: '242 - 7', materia: 'LIN240 - LINGUISTICA GRAL.,FONETICA Y FONOLOGIA', cr: 10, periodo: '1-2024', nota: 30 },
   { nivel: 2, carrera: '242 - 7', materia: 'TEX240 - PRODUC.TEXTUAL EN LA INVEST.LINGUIS.Y LITERAT.', cr: 6, periodo: '1-2024', nota: 34 },
-  { nivel: 1, carrera: '187 - 3', materia: 'MAT101 - CALCULO I', cr: 5, periodo: '1-2025', nota: 12 },
+  { nivel: 1, carrera: '187 - 3', materia: 'MAT101 - CALCULO I', cr: 5, periodo: '1-2025', nota: 42 },
   { nivel: 1, carrera: '187 - 3', materia: 'INF119 - ESTRUCTURAS DISCRETAS', cr: 5, periodo: '1-2025', nota: 68 },
   { nivel: 1, carrera: '187 - 3', materia: 'LIN100 - INGLES TECNICO I', cr: 4, periodo: '1-2025', nota: 73 },
-  { nivel: 1, carrera: '187 - 3', materia: 'INF110 - INTRODUCCION A LA INFORMATICA', cr: 5, periodo: '1-2025', nota: 17 },
+  { nivel: 1, carrera: '187 - 3', materia: 'INF110 - INTRODUCCION A LA INFORMATICA', cr: 5, periodo: '1-2025', nota: 47 },
   { nivel: 3, carrera: '187 - 3', materia: 'ADM100 - ADMINISTRACION', cr: 4, periodo: '2-2025', nota: 80 },
-  { nivel: 2, carrera: '187 - 3', materia: 'MAT103 - ALGEBRA LINEAL', cr: 5, periodo: '2-2025', nota: 28 },
+  { nivel: 2, carrera: '187 - 3', materia: 'MAT103 - ALGEBRA LINEAL', cr: 5, periodo: '2-2025', nota: 52 },
   { nivel: 1, carrera: '187 - 3', materia: 'MAT101 - CALCULO I', cr: 5, periodo: '2-2025', nota: 63 },
   { nivel: 1, carrera: '187 - 3', materia: 'FIS100 - FISICA I', cr: 6, periodo: '2-2025', nota: 61 },
   { nivel: 1, carrera: '187 - 3', materia: 'INF110 - INTRODUCCION A LA INFORMATICA', cr: 5, periodo: '2-2025', nota: 80 },
-  { nivel: 2, carrera: '187 - 3', materia: 'MAT103 - ALGEBRA LINEAL', cr: 5, periodo: '3-2025', nota: 51 },
-  { nivel: 2, carrera: '187 - 6', materia: 'INF112 - BASE DE DATOS I', cr: 5, periodo: '1-2026', nota: 67 }
+  { nivel: 2, carrera: '187 - 3', materia: 'MAT103 - PROGRAMACIÓN GRAFICA', cr: 5, periodo: '3-2025', nota: 51 },
+  { nivel: 2, carrera: '187 - 6', materia: 'INF112 - BASE DE DATOS I', cr: 5, periodo: '1-2026', nota: 67 },
+  { nivel: 2, carrera: '187 - 6', materia: 'MAT102 - CÁLCULO II', cr: 5, periodo: '1-2026', nota: 52 },
+  { nivel: 2, carrera: '187 - 6', materia: 'FIS102 - FÍSICA II', cr: 6, periodo: '1-2026', nota: 51 },
+  { nivel: 2, carrera: '187 - 6', materia: 'INF120 - PROGRAMACIÓN I', cr: 5, periodo: '1-2026', nota: 58 },
+  { nivel: 1, carrera: '187 - 6', materia: 'INF111 - ARQUITECTURA DE SOFTWARE', cr: 5, periodo: '2-2026', nota: 'INS' },
+  { nivel: 25, carrera: '187 - 6', materia: 'INF212 - BASE DE DATOS II', cr: 5, periodo: '2-2026', nota: 'INS' },
+  { nivel: 2, carrera: '187 - 6', materia: 'MAT102 - ECUACIONES DIFERENCIALES', cr: 5, periodo: '2-2026', nota: 'INS' },
+  { nivel: 3, carrera: '187 - 6', materia: 'INF219 - INGENIERÍA DE REQUISITOS Y MODELADO', cr: 5, periodo: '2-2026', nota: 'INS' },
+  { nivel: 1, carrera: '187 - 6', materia: 'MET100 - METODOLOGÍA DE LA INVESTIGACIÓN', cr: 3, periodo: '2-2026', nota: 'INS' },
+  { nivel: 2, carrera: '187 - 6', materia: 'INF120 - PROGRAMACIÓN II', cr: 5, periodo: '2-2026', nota: 'INS' },
+  { nivel: 1, carrera: '187 - 6', materia: 'INF111 - ARQUITECTURA DE COMPUTADORAS', cr: 5, periodo: '4-2026', nota: 55 }
 ]
